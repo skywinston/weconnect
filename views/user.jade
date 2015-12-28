@@ -1,11 +1,10 @@
 extends layout
 
 block content
-    = JSON.stringify(connections)
     h3 User Profile
     h1= user.name
     h3 ID: #{user.id}
     ul
-        for connection in connections
+        for u, l in results
             li
-                a(href="/users/" + connection.id)= connection.name
+                a(href="/users/" + l) #{list[l].name} | Depth: #{u}
