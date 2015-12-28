@@ -1,6 +1,11 @@
 extends layout
 
 block content
+    = JSON.stringify(connections)
     h3 User Profile
     h1= user.name
     h3 ID: #{user.id}
+    ul
+        for connection in connections
+            li
+                a(href="/users/" + connection.id)= connection.name
